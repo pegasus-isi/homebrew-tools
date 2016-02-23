@@ -7,7 +7,7 @@ class Pegasus < Formula
     head "http://github.com/pegasus-isi/pegasus.git"
 
     devel do
-        url "https://github.com/pegasus-isi/pegasus.git", :using => :git, :tag => '4.6'
+        url "https://github.com/pegasus-isi/pegasus.git", :using => :git, :branch => '4.6'
         version "4.6.1dev"
     end
 
