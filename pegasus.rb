@@ -6,6 +6,11 @@ class Pegasus < Formula
     sha256 "9fc0cf5bf1cbbd6d5dca8fcb517db6d6770943deddc8ffdbb1bdb6eba038ad24"
     head "http://github.com/pegasus-isi/pegasus.git"
 
+    devel do
+        url "https://github.com/pegasus-isi/pegasus.git", :using => :git, :tag => '4.6'
+        version "4.6.1dev"
+    end
+
     option "with-docs", "Install documentation"
     option "with-mysql", "Install MySQL support"
     option "with-postgresql", "Install PostgreSQL support"
