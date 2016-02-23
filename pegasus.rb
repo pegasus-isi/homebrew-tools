@@ -1,21 +1,46 @@
 class Pegasus < Formula
     desc "Pegasus Workflow Management System"
-    homepage "https://pegasus.isi.edu"
-    url "http://download.pegasus.isi.edu/pegasus/4.6.0/pegasus-binary-4.6.0-x86_64_macos_10.tar.gz"
+    homepage "http://pegasus.isi.edu"
+    url "http://download.pegasus.isi.edu/pegasus/4.6.0/pegasus-source-4.6.0.tar.gz"
     version "4.6.0"
-    sha256 "8fd3cb8e70257ed8185f51f4b2e2c1ac2096d8bd8fcf3b5744478a7395b580c7"
+    sha256 "9fc0cf5bf1cbbd6d5dca8fcb517db6d6770943deddc8ffdbb1bdb6eba038ad24"
+    head "http://github.com/pegasus-isi/pegasus.git"
 
-    bottle :unneeded
+    option "with-docs", "Install documentation"
+    option "with-mysql", "Install MySQL support"
+    option "with-postgresql", "Install PostgreSQL support"
+
+    depends_on "ant" => :build
+    depends_on "asciidoc" => :build
+    if build.with?("docs")
+        depends_on "fop" => :build
+    end
+    if build.with?("mysql")
+        depends_on "mysql"
+    end
+    if build.with?("postgresql")
+        depends_on "postgresql"
+    end
 
     def install
-        bin.install Dir["bin/*"]
-        share.install "share/pegasus"
-        lib.install "lib/pegasus"
-        man1.install Dir["share/man/man1/*.1"]
-        doc.install Dir["share/doc/pegasus/*"]
+        if build.with?("docs")
+            system "ant", "dist-release"
+        else
+            system "ant", "dist-common", "doc-manpages"
+        end
+        ver = `./release-tools/getversion`.strip
+        cd "dist/pegasus-#{ver}" do
+            bin.install Dir["bin/*"]
+            share.install "share/pegasus"
+            lib.install "lib/pegasus"
+            man1.install Dir["share/man/man1/*.1"]
+            if build.with?("docs")
+                doc.install Dir["share/doc/pegasus/*"]
+            end
+        end
     end
 
     test do
-        system "#{bin}/pegasus-version"
+        system "pegasus-version"
     end
 end
