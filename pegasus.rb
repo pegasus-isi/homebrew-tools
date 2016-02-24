@@ -37,13 +37,16 @@ class Pegasus < Formula
     end
 
     def install
+        command = ["ant", "clean"]
         if build.with?("docs")
-            system "ant", "dist-release"
-        elsif build.with?("manpages")
-            system "ant", "dist-common", "doc-manpages"
+            command << "dist-release"
         else
-            system "ant", "dist-common"
+            command << "dist-common"
         end
+        if build.with?("manpages")
+            command << "doc-manpages"
+        end
+        system *command
         ver = `./release-tools/getversion`.strip
         cd "dist/pegasus-#{ver}" do
             bin.install Dir["bin/*"]
