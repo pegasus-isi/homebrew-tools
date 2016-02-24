@@ -11,6 +11,10 @@ class Pegasus < Formula
         version "4.6.1dev"
     end
 
+    # This check was causing a warning due to the stdlib mismatch with htcondor,
+    # but that doesn't matter for pegasus<->htcondor interaction
+    cxxstdlib_check :skip
+
     option "with-docs", "Install documentation"
     option "without-manpages", "Install without manpages"
     option "with-mysql", "Install MySQL support"
