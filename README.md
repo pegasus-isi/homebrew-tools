@@ -2,9 +2,17 @@
 
 Homebrew formulas for Pegasus.
 
-## Installing
+## Installing Pegasus and HTCondor
 
 ```
-# (optional) brew update
-brew install pegasus-isi/tools/pegasus
+brew tap pegasus-isi/tools
+brew install pegasus
 ```
+
+## Running HTCondor
+
+```
+brew tap homebrew/services
+brew services start htcondor
+```
+
