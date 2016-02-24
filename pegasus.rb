@@ -12,13 +12,16 @@ class Pegasus < Formula
     end
 
     option "with-docs", "Install documentation"
+    option "without-manpages", "Install without manpages"
     option "with-mysql", "Install MySQL support"
     option "with-postgresql", "Install PostgreSQL support"
 
     depends_on "htcondor"
     depends_on :java
     depends_on "ant" => :build
-    depends_on "asciidoc" => :build
+    if build.with?("manpages") or build.with?("docs")
+        depends_on "asciidoc" => :build
+    end
     if build.with?("docs")
         depends_on "fop" => :build
     end
@@ -32,15 +35,19 @@ class Pegasus < Formula
     def install
         if build.with?("docs")
             system "ant", "dist-release"
-        else
+        else if build.with?("manpages")
             system "ant", "dist-common", "doc-manpages"
+        else
+            system "ant", "dist-common"
         end
         ver = `./release-tools/getversion`.strip
         cd "dist/pegasus-#{ver}" do
             bin.install Dir["bin/*"]
             share.install "share/pegasus"
             lib.install "lib/pegasus"
-            man1.install Dir["share/man/man1/*.1"]
+            if build.with?("manpages")
+                man1.install Dir["share/man/man1/*.1"]
+            end
             if build.with?("docs")
                 doc.install Dir["share/doc/pegasus/*"]
             end
