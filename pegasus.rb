@@ -35,7 +35,7 @@ class Pegasus < Formula
     def install
         if build.with?("docs")
             system "ant", "dist-release"
-        else if build.with?("manpages")
+        elsif build.with?("manpages")
             system "ant", "dist-common", "doc-manpages"
         else
             system "ant", "dist-common"
