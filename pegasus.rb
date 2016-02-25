@@ -20,7 +20,6 @@ class Pegasus < Formula
     option "with-mysql", "Install MySQL support"
     option "with-postgresql", "Install PostgreSQL support"
 
-    depends_on "htcondor"
     depends_on :java
     depends_on "ant" => :build
     if build.with?("manpages") or build.with?("docs")
