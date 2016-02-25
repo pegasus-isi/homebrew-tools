@@ -60,6 +60,13 @@ class Pegasus < Formula
         end
     end
 
+    def caveats
+        <<-EOS.undent
+        In order to run workflows you will also need to install HTCondor. You
+        can either do this manually, or you can install the htcondor formula.
+        EOS
+    end
+
     test do
         system "pegasus-version"
     end
