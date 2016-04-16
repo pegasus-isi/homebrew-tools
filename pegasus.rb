@@ -22,6 +22,7 @@ class Pegasus < Formula
 
     depends_on :java
     depends_on "ant" => :build
+    depends_on "openssl"
     if build.with?("manpages") or build.with?("docs")
         depends_on "asciidoc" => :build
     end
