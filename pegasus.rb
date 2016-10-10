@@ -1,9 +1,9 @@
 class Pegasus < Formula
     desc "Pegasus Workflow Management System"
     homepage "http://pegasus.isi.edu"
-    url "http://download.pegasus.isi.edu/pegasus/4.6.1/pegasus-source-4.6.1.tar.gz"
-    version "4.6.1"
-    sha256 "f15a2cdb76c7d6d32cd9a4714cc455ddea169f27245e30a6abcd29477db1b75a"
+    url "http://download.pegasus.isi.edu/pegasus/4.6.2/pegasus-source-4.6.2.tar.gz" 
+    version "4.6.2"
+    sha256 "1a9a96ca38e8adc592ffe53e4d023d53cc6c6f32ee84337a7e5f6fd35e8275e5"
     head "http://github.com/pegasus-isi/pegasus.git"
 
     devel do
