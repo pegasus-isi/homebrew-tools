@@ -8,7 +8,7 @@ class Pegasus < Formula
 
     devel do
         url "https://github.com/pegasus-isi/pegasus.git", :using => :git, :branch => '4.6'
-        version "4.6.2dev"
+        version "4.6.3dev"
     end
 
     # This check was causing a warning due to the stdlib mismatch with htcondor,
