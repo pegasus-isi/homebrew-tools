@@ -3,7 +3,7 @@ class Pegasus < Formula
     homepage "http://pegasus.isi.edu"
     url "http://download.pegasus.isi.edu/pegasus/4.7.1/pegasus-source-4.7.1.tar.gz" 
     version "4.7.1"
-    sha256 "2fa17b8a3d9d60c6bb2c3aa2da3a7f5fef8de2fdd08e009a4be010cb2f17081a"
+    sha256 "f5468c80765ffc7a9d8b947e64b18f20b62b71282dc1efd66404c3eb85d50c10"
     head "http://github.com/pegasus-isi/pegasus.git"
 
     devel do
