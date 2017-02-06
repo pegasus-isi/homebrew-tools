@@ -1,14 +1,14 @@
 class Pegasus < Formula
     desc "Pegasus Workflow Management System"
-    homepage "http://pegasus.isi.edu"
-    url "http://download.pegasus.isi.edu/pegasus/4.7.2/pegasus-source-4.7.2.tar.gz" 
-    version "4.7.2"
-    sha256 "99cc528cd093f4bf7dd6833d2d72cac46bf04ea534dce62d7ab02a79ea1c383a"
+    homepage "https://pegasus.isi.edu"
+    url "http://download.pegasus.isi.edu/pegasus/4.7.3/pegasus-source-4.7.3.tar.gz" 
+    version "4.7.3"
+    sha256 "45e6e1ae09c2de8bed7882210f5ba48f1baf04dec5b2777187c8a0d651c08fc5"
     head "http://github.com/pegasus-isi/pegasus.git"
 
     devel do
         url "https://github.com/pegasus-isi/pegasus.git", :using => :git, :branch => '4.7'
-        version "4.7.3dev"
+        version "4.7.4dev"
     end
 
     # This check was causing a warning due to the stdlib mismatch with htcondor,
