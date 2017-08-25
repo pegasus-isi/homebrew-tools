@@ -19,6 +19,7 @@ class Pegasus < Formula
     option "without-manpages", "Install without manpages"
     option "with-mysql", "Install MySQL support"
     option "with-postgresql", "Install PostgreSQL support"
+    option "with-r-api", "Install R DAX API"
 
     depends_on :java
     depends_on "ant" => :build
@@ -35,9 +36,13 @@ class Pegasus < Formula
     if build.with?("postgresql")
         depends_on "postgresql"
     end
+    if build.with?("r-api")
+        depends_on "r"
+    end
 
     def install
         command = ["ant", "clean"]
+
         if build.with?("docs")
             command << "dist-release"
         else
@@ -46,7 +51,12 @@ class Pegasus < Formula
         if build.with?("manpages")
             command << "doc-manpages"
         end
+        if not build.with?("r-api")
+            ENV["PEGASUS_BUILD_R_MODULES"] = "0"
+        end
+
         system *command
+
         ver = `./release-tools/getversion`.strip
         cd "dist/pegasus-#{ver}" do
             bin.install Dir["bin/*"]
@@ -72,3 +82,4 @@ class Pegasus < Formula
         system "pegasus-version"
     end
 end
+
