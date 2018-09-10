@@ -27,19 +27,19 @@ class Htcondor < Formula
     end
 
     def caveats
-        s = <<-EOS.undent
+        s = <<~EOS
         HTCondor is installed with local dir set to #{localdir}. Local configuration
         changes should go in #{localdir}/condor_config.local or #{localdir}/config/.
 
         EOS
         if File.exist? "/etc/condor_config" or File.exist? "/etc/condor/condor_config"
-            s += <<-EOS.undent
+            s += <<~EOS
             An '/etc/condor_config' or '/etc/condor/condor_config' from another install may
             interfere with a Homebrew-installed HTCondor.
 
             EOS
         end
-        s += <<-EOS.undent
+        s += <<~EOS
         The easiest way to manage the HTCondor service is to use Homebrew services:
 
         $ brew tap homebrew/services
@@ -52,7 +52,7 @@ class Htcondor < Formula
         s
     end
 
-    def plist; <<-EOS.undent
+    def plist; <<~EOS
         <?xml version="1.0" encoding="UTF-8"?>
         <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN"
         "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
