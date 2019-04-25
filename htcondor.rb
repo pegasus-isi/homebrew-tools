@@ -1,14 +1,14 @@
 class Htcondor < Formula
     desc "HTCondor workload management system"
     homepage "http://research.cs.wisc.edu/htcondor"
-    url "http://download.pegasus.isi.edu/condor/condor-8.4.4-x86_64_MacOSX7-stripped.tar.gz"
-    version "8.4.4"
-    sha256 "24b992bc569b6ef5674798f70e23b78361c42a60bd42aa292ec002d922c0e113"
+    url "http://download.pegasus.isi.edu/condor/condor-8.8.2-x86_64_MacOSX-stripped.tar.gz"
+    version "8.8.2"
+    sha256 "1296a1b231c1908030a60826c76b1dfb9931c5c2e61b862018bce201cb51c2c0"
 
     devel do
-        url "http://download.pegasus.isi.edu/condor/condor-8.5.2-x86_64_MacOSX-stripped.tar.gz"
-        sha256 "60d70cac5463c90762fffc359727bc2671105ba52aec4a55da2b0414e25c67cc"
-        version "8.5.2"
+        url "http://download.pegasus.isi.edu/condor/condor-8.9.1-x86_64_MacOSX-stripped.tar.gz"
+        sha256 "2255387863256149312e0157fffe6919c3296b3a3b6818d000500770cd512976"
+        version "8.9.1"
     end
 
     def localdir
