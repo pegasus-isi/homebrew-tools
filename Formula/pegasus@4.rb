@@ -1,4 +1,4 @@
-class Pegasus < Formula
+class PegasusAT4 < Formula
     desc "Pegasus Workflow Management System"
     homepage "https://pegasus.isi.edu"
 
