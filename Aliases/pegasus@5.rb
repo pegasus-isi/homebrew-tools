@@ -1,1 +1,0 @@
-../Formula/pegasus@5.rb
