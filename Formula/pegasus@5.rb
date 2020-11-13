@@ -48,7 +48,7 @@ class PegasusAT5 < Formula
             command << "dist-common"
         end
         if build.with?("manpages")
-            command << "doc-manpages"
+            command << "doc-user-guide"
         end
         if not build.with?("r-api")
             ENV["PEGASUS_BUILD_R_MODULES"] = "0"
