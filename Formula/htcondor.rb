@@ -3,9 +3,9 @@ class Htcondor < Formula
   homepage "http://research.cs.wisc.edu/htcondor"
 
   stable do
-    url "http://download.pegasus.isi.edu/condor/condor-8.8.2-x86_64_MacOSX-stripped.tar.gz"
-    version "8.8.2"
-    sha256 "1296a1b231c1908030a60826c76b1dfb9931c5c2e61b862018bce201cb51c2c0"
+    url "http://download.pegasus.isi.edu/condor/condor-8.8.12-x86_64_MacOSX-stripped.tar.gz"
+    version "8.8.12"
+    sha256 "eab69cf3c19b79cabc53e69f86b68ca02032426b1bad668b219048c3fc434c85"
   end
 
   head do
