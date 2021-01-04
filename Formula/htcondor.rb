@@ -9,9 +9,9 @@ class Htcondor < Formula
   end
 
   head do
-    url "http://download.pegasus.isi.edu/condor/condor-8.9.1-x86_64_MacOSX-stripped.tar.gz"
-    sha256 "2255387863256149312e0157fffe6919c3296b3a3b6818d000500770cd512976"
-    version "8.9.1"
+    url "http://download.pegasus.isi.edu/condor/condor-8.9.10-x86_64_MacOSX-stripped.tar.gz"
+    sha256 "0c17db845a540af5162868c97f5170f1757e40d25e0cc82113cba16fd3a26027"
+    version "8.9.10"
   end
 
   def localdir
