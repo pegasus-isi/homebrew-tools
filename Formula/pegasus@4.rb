@@ -23,7 +23,7 @@ class PegasusAT4 < Formula
     option "with-postgresql", "Install PostgreSQL support"
     option "with-r-api", "Install R DAX API"
 
-    depends_on :openjdk
+    depends_on "openjdk"
     depends_on "ant" => :build
     depends_on "openssl"
     if build.with?("manpages") or build.with?("docs")
