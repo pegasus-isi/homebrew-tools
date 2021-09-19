@@ -53,6 +53,9 @@ class PegasusAT5 < Formula
         if not build.with?("r-api")
             ENV["PEGASUS_BUILD_R_MODULES"] = "0"
         end
+        if ENV.has_key?("HOMEBREW_PEGASUS_PYTHON")
+            ENV["PEGASUS_PYTHON"] = ENV["HOMEBREW_PEGASUS_PYTHON"]
+        end
 
         system *command
 
