@@ -72,6 +72,8 @@ class HtcondorAT9 < Formula
 
         brew tap homebrew/services
         brew services list
+        brew services start #{name}
+        brew services stop #{name}
     EOS
     s
   end
