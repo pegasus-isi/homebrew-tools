@@ -1,4 +1,4 @@
-class Htcondor < Formula
+class HtcondorAT8 < Formula
   desc "Workload management system"
   homepage "http://research.cs.wisc.edu/htcondor"
 
