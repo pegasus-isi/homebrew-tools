@@ -3,14 +3,14 @@ class PegasusAT5 < Formula
     homepage "https://pegasus.isi.edu"
 
     stable do
-        url "https://download.pegasus.isi.edu/pegasus/5.0.5/pegasus-5.0.5.tar.gz"
-        version "5.0.5"
-        sha256 "cb04c9744e1e14c8518d4b33a0e79ef5c524e35d2a36f5e5417711520f6fcab5"
+        url "https://download.pegasus.isi.edu/pegasus/5.0.6/pegasus-5.0.6.tar.gz"
+        version "5.0.6"
+        sha256 "0b52af3ef67c5501d4765bc4b000188a86336ce3cd2f3e71cd2da4bb7dd98c8a"
     end
 
     head do
         url "https://github.com/pegasus-isi/pegasus.git", :using => :git, :branch => '5.0'
-        version "5.0.6dev"
+        version "5.0.7dev"
     end
 
     # This check was causing a warning due to the stdlib mismatch with htcondor,
