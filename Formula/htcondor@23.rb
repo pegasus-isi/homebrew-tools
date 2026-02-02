@@ -75,7 +75,6 @@ class HtcondorAT23 < Formula
     s += <<~EOS
       To manage the HTCondor service use Homebrew services:
 
-        brew tap homebrew/services
         brew services list
         brew services start #{name}
         brew services stop #{name}
