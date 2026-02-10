@@ -15,13 +15,12 @@ class PegasusAT5 < Formula
 
     # This check was causing a warning due to the stdlib mismatch with htcondor,
     # but that doesn't matter for pegasus<->htcondor interaction
-    cxxstdlib_check :skip
+    # cxxstdlib_check :skip
 
     option "with-docs", "Install documentation"
-    option "without-manpages", "Install without manpages"
+    option "with-manpages", "Install with manpages"
     option "with-mysql", "Install MySQL support"
     option "with-postgresql", "Install PostgreSQL support"
-    option "with-r-api", "Install R DAX API"
 
     depends_on "openjdk"
     depends_on "ant" => :build
@@ -35,9 +34,6 @@ class PegasusAT5 < Formula
     if build.with?("postgresql")
         depends_on "postgresql"
     end
-    if build.with?("r-api")
-        depends_on "r"
-    end
 
     def install
         command = ["ant", "clean"]
@@ -49,9 +45,6 @@ class PegasusAT5 < Formula
         end
         if build.with?("manpages")
             command << "doc-user-guide"
-        end
-        if not build.with?("r-api")
-            ENV["PEGASUS_BUILD_R_MODULES"] = "0"
         end
         if ENV.has_key?("HOMEBREW_PEGASUS_PYTHON")
             ENV["PEGASUS_PYTHON"] = ENV["HOMEBREW_PEGASUS_PYTHON"]
@@ -84,4 +77,3 @@ class PegasusAT5 < Formula
         system "pegasus-version"
     end
 end
-
