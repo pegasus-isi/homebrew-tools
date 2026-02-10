@@ -63,7 +63,7 @@ class PegasusAT5 < Formula
         cd "dist/pegasus-#{ver}" do
             bin.install Dir["bin/*"]
             share.install "share/pegasus"
-            lib.install "lib/pegasus"
+            lib.install Dir["lib/*"]
             if build.with?("manpages")
                 man1.install Dir["share/man/man1/*.1"]
             end
