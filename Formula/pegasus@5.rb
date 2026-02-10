@@ -41,6 +41,7 @@ class PegasusAT5 < Formula
         if build.with?("docs")
             command << "dist-release"
         else
+            command << "dist-worker"
             command << "dist-common"
         end
         if build.with?("manpages")
